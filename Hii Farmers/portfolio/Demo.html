@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture & Food Organization</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+    <header>
+        <h1>Agriculture & Food Organization</h1>
+        <nav>
+            <ul>
+                <li><a href="#marketplace" id="marketplace-link">Marketplace</a></li>
+                <li><a href="#videos" id="videos-link">Educational Videos</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#connection">Farmer to Farmer Connection</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="marketplace">
+        <h2>Buy Fresh Produce</h2>
+        <div class="product-list" id="product-list">
+            <div class="product" data-name="rice">
+                <img src="rice.jpeg" alt="Rice">
+                <h3>RICE</h3>
+                <p>Price: RS 62/kg</p>
+                <a href="purchase.html?product=rice"><button class="buy-now">Buy Now</button></a>
+            </div>
+            <div class="product" data-name="wheat">
+                <img src="Wheat.jpeg" alt="Wheat">
+                <h3>Wheat</h3>
+                <p>Price: RS 42/kg</p>
+                <a href="purchase.html?product=wheat"><button class="buy-now">Buy Now</button></a>
+            </div>
+            <div class="product" data-name="chana">
+                <img src="Chana.jpg" alt="Chana Dal">
+                <h3>Chana Dal</h3>
+                <p>Price: RS 40/kg</p>
+                <a href="purchase.html?product=chana"><button class="buy-now">Buy Now</button></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="videos">
+        <h2>Learn Farming Techniques</h2>
+        <div class="video-container" id="video-list">
+            <div class="video" data-title="rice">
+                <video controls>
+                    <source src="ag.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>How to grow Rice Plant</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-list">
+            <div class="service">
+                <h3><a href="insurance.html" class="service-link">Insurance</a></h3>
+                <p>Comprehensive farm insurance.</p>
+            </div>
+            <div class="service">
+                <h3><a href="https://mausam.imd.gov.in/" class="service-link">Climate Change Alerts</a></h3>
+                <p>Get warnings about extreme weather conditions.</p>
+            </div>
+            <div class="service">
+                <h3><a href="https://www.india.gov.in/spotlight/soil-health-card" class="service-link">Soil Testing</a></h3>
+                <p>Know the health of your soil.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <h2>Our Portfolio</h2>
+        <div class="portfolio-list">
+            <div class="portfolio-item">
+                <img src="project1.jpg" alt="Project 1">
+                <h3>Project 1</h3>
+                <p>Description of project 1. This could include details about the project's impact, objectives, and results.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="project2.jpg" alt="Project 2">
+                <h3>Project 2</h3>
+                <p>Description of project 2. Highlight the achievements, challenges overcome, and the benefits provided.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="project3.jpg" alt="Project 3">
+                <h3>Project 3</h3>
+                <p>Description of project 3. Include key outcomes, the target audience, and any notable collaborations.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="connection">
+        <h2>Farmer to Farmer Connection Platform</h2>
+        <form id="connection-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+            
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required>
+            
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile" required>
+            
+            <label for="problem">Problem:</label>
+            <textarea id="problem" name="problem" rows="4" required></textarea>
+            
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="problems-list">
+            <!-- Example problem entry -->
+            <!-- Entries will be dynamically added here -->
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>Contact us: farmersmarket@example.com | Phone: +123 456 7890</p>
+    </footer>
+
+    <script>
+        document.getElementById('connection-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const address = document.getElementById('address').value;
+            const state = document.getElementById('state').value;
+            const mobile = document.getElementById('mobile').value;
+            const problem = document.getElementById('problem').value;
+            
+            const problemEntry = document.createElement('div');
+            problemEntry.classList.add('problem-entry');
+            problemEntry.innerHTML = `
+                <h3>${name}</h3>
+                <p>Address: ${address}</p>
+                <p>State: ${state}</p>
+                <p>Mobile Number: ${mobile}</p>
+                <p>Problem: ${problem}</p>
+                <button class="like-btn">Like</button>
+                <button class="comment-btn">Comment</button>
+                <div class="comments-section">
+                    <textarea class="comment-input" placeholder="Add a comment..."></textarea>
+                    <button class="submit-comment-btn">Submit Comment</button>
+                </div>
+                <div class="comments-list"></div>
+            `;
+            
+            document.getElementById('problems-list').appendChild(problemEntry);
+            
+            // Clear the form
+            document.getElementById('connection-form').reset();
+        });
+
+        document.addEventListener('click', function(event) {
+            if (event.target.classList.contains('submit-comment-btn')) {
+                const commentInput = event.target.previousElementSibling;
+                const commentsList = event.target.parentElement.nextElementSibling;
+                
+                if (commentInput.value.trim()) {
+                    const comment = document.createElement('p');
+                    comment.textContent = commentInput.value;
+                    commentsList.appendChild(comment);
+                    commentInput.value = ''; // Clear input
+                }
+            }
+
+            if (event.target.classList.contains('like-btn')) {
+                alert('Liked!'); // Implement like functionality as needed
+            }
+        });
+    </script>
+</body>
+</html>

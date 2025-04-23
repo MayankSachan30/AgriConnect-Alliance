@@ -1,0 +1,229 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(243, 237, 237);
+    animation: fadeIn 2s ease-in-out;
+}
+
+header {
+    background-image: url("ak.jpg");
+    color: rgb(62, 18, 18);
+    padding: 15px 10px;
+    text-align: center;
+    animation: slideIn 1s ease-out;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+    font-size: 20px;
+}
+
+nav ul li a {
+    color: rgb(1, 2, 10);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #367eca;
+}
+
+section {
+    padding: 20px;
+    margin: 10px 0;
+}
+
+#marketplace, #videos, #services, #connection {
+    background-color: w;
+    border-radius: 10px;
+    color: black;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(222, 19, 19, 0.1);
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.product-list, .video-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.product, .video {
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-image: url("ak.jpg");
+    transition: transform 0.3s;
+}
+
+.product:hover, .video:hover {
+    transform: scale(1.05);
+}
+
+.product img {
+    max-width: 150px;
+    border-radius: 10px;
+}
+
+.video-container video {
+    max-width: 80%;
+    border-radius: 10px;
+}
+
+#services {
+    background-color: rgb(243, 237, 237);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.services-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.service {
+    flex: 1 1 30%;
+    margin: 10px;
+    padding: 10px;
+    max-width: 300px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-image: url("far.jpeg");
+    transition: transform 0.3s;
+}
+
+.service:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    background-image: url("ak.jpg");
+    color: rgb(25, 18, 18);
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+#connection form {
+    display: flex;
+    flex-direction: column;
+}
+
+#connection form label {
+    margin-top: 10px;
+}
+
+#connection form input, #connection form textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+
+}
+
+#connection form button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4e28a7;
+    color: rgb(25, 19, 19);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#connection form button:hover {
+    background-color: #218838;
+}
+
+.problem-entry {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-image: url("ak.jpg");
+}
+
+.problem-entry button {
+    margin-top: 10px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.like-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.like-btn:hover {
+    background-color: #0056b3;
+}
+
+.comment-btn {
+    background-color: #ffc107;
+    color: black;
+}
+
+.comment-btn:hover {
+    background-color: #e0a800;
+}
+
+.comments-section {
+    margin-top: 10px;
+}
+
+.comment-input {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #460404;
+}
+
+.submit-comment-btn {
+    margin-top: 5px;
+    padding: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-comment-btn:hover {
+    background-color: #0056b3;
+}
+
+.comments-list p {
+    margin-top: 5px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-100px); }
+    to { transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
